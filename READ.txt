@@ -7,12 +7,13 @@ also worst case scenario you open up A LOT OF THEM, there is a hidden file calle
 -----------------------------------------------------------[HOW TO SET UP]-----------------------------------------------------------
 
 1. Hide all files except "an interesting file.vbs", or if you want some extra spice you can make a shortcut to that file and hide the vbs file too so nobody knows what it is... you can even change its icon!
-(To hide a file, right click on it, press more options if you're on windows 11, and press properties. Inside the general tab there will be a "hidden" checkbox. Make sure it's on.)
+(To hide a file, right click on it, press more options if you're on windows 11, and press properties. Inside the general tab there will be a "hidden" checkbox. Make sure it's on. To make a shortcut, right click the .vbs file, press 'Copy Path', then go to the Desktop, right click, new, shortcut, paste the path you copied, enter, enter any name you want, the press OK. To change the icon, right click the shortcut (you can recognize it by a small arrow sign on the bottom right of the shortcut) then properties, then change icon, then pick any you want.)
 2. Zip it if you want to share it with someone. You need all the hidden files for the thing to work, ESPECIALLY THE .hta FILE which is where all the sauce is in.
 -----------------------------------------------------------[NOTE!!!!!!!!!!!]-----------------------------------------------------------
 Please make sure to use this ethically and with somebody's permission. I am not viable for any damage of friendships or computers that can barely run 2 YouTube videos at once.
 
 enjoy pranking your friends!!!!
+
 
 
 
