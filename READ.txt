@@ -2,6 +2,7 @@
 
 type baguette to close
 also worst case scenario you open up A LOT OF THEM, there is a hidden file called "killswitch.bat" that kills all mshta.exe files...
+Alternatively, you can restart the PC because the program wasn't made to be malicious.
 
 
 -----------------------------------------------------------[HOW TO SET UP]-----------------------------------------------------------
@@ -11,6 +12,8 @@ also worst case scenario you open up A LOT OF THEM, there is a hidden file calle
 2. Zip it if you want to share it with someone. You need all the hidden files for the thing to work, ESPECIALLY THE .hta FILE which is where all the sauce is in.
 -----------------------------------------------------------[NOTE!!!!!!!!!!!]-----------------------------------------------------------
 Please make sure to use this ethically and with somebody's permission. I am not viable for any damage of friendships or computers that can barely run 2 YouTube videos at once.
+NOTE: THIS WAS MADE FOR EDUCATIONAL PURPOSES ONLY, PLEASE ONLY USE IT ETHICALLY. BY DOWNLOADING THIS REPO YOU ARE RESPONSIBLE FOR ALL DAMAGE DONE WITH THIS PROGRAM! 
+
 
 enjoy pranking your friends!!!!
 
